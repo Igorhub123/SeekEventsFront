@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">Cadastro de Empresa</h3>
+        </div>
+
+        <div class="card-body">
+            <form [formGroup]="empresaForm" (ngSubmit)="onSubmit()">
+
+                <div class="mb-3">
+                    <label class="form-label">Nome da Empresa</label>
+                    <input type="text" class="form-control" formControlName="nome"
+                        [class.is-invalid]="empresaForm.get('nome')?.invalid && empresaForm.get('nome')?.touched">
+                    <div class="invalid-feedback" *ngIf="empresaForm.get('nome')?.errors?.['required']">
+                        Nome é obrigatório
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">CNPJ</label>
+                    <input type="text" class="form-control" formControlName="cnpj"
+                        [class.is-invalid]="empresaForm.get('cnpj')?.invalid && empresaForm.get('cnpj')?.touched">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Status</label>
+                    <select class="form-select" formControlName="status">
+                        <option value="Ativo">Ativo</option>
+                        <option value="Inativo">Inativo</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Categoria</label>
+                    <select class="form-select" formControlName="categoria">
+                        <option value="1">Tecnologia</option>
+                        <option value="2">Alimentação</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary" [disabled]="empresaForm.invalid">
+                    <i class="bi bi-save me-2"></i> Salvar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

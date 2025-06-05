@@ -1,0 +1,26 @@
+.card {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+
+    .card-header {
+        border-radius: 10px 10px 0 0 !important;
+        font-size: 1.2rem;
+    }
+}
+
+.btn-primary {
+    transition: all 0.3s;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.invalid-feedback {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: #dc3545;
+}

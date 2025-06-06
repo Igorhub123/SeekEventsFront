@@ -45,7 +45,7 @@ export class Inicial {
       this.router.navigate(['/login']);
     } else {
       // Lógica para quando o usuário estiver logado
-      // this.router.navigate(['/detalhes-evento']);
+      this.router.navigate(['/principal']);
     }
   }
 
